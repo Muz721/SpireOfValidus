@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.example.administrator.spireofvalidus.view.GameView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:id="@+id/operate_and_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnTop"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/top"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnMonster"
+                    android:layout_width="35dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/monster"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnLeft"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/left"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/btnRight"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/right"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <Button
+                    android:id="@+id/btnDown"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/down"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnExchangeTier"
+                    android:layout_width="35dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn"
+                    android:gravity="center"
+                    android:text="@string/exchangeTier"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/user_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/user_img"
+                android:src="@drawable/user" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/xin"
+                        android:contentDescription="@string/user_HP" />
+
+                    <TextView
+                        android:id="@+id/HP"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:drawablePadding="20sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/tubiaogongji"
+                        android:contentDescription="@string/user_ATK" />
+                    <TextView
+                        android:id="@+id/ATK"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/fangyutubiao"
+                        android:contentDescription="@string/user_DEF" />
+                    <TextView
+                        android:id="@+id/DEF"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+<TextView
+    android:id="@+id/user_message"
+    android:textColor="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/yellokey"/>
+                <TextView
+                    android:id="@+id/goldKey"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/bluekey"/>
+                <TextView
+                    android:id="@+id/silverKey"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/redkey"/>
+                <TextView
+                    android:id="@+id/copperKey"
+
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.example.administrator.spireofvalidus.view.CombatView
+        android:id="@+id/combat"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible"/>
+    <com.example.administrator.spireofvalidus.view.DMessageView
+        android:id="@+id/dMessage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="130dp"
+        android:visibility="invisible"/>
+    <com.example.administrator.spireofvalidus.view.ShopAndNpcSayView
+        android:id="@+id/shopAndNpc"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible"
+        android:background="@drawable/shopimgbg"/>
+</RelativeLayout>

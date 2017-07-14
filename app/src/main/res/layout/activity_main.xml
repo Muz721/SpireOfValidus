@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.spireofvalidus.MainActivity"
+   >
+    <!--<RelativeLayout-->
+        <!--ba-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+    <!--</RelativeLayout>-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+<com.example.administrator.spireofvalidus.MyImageView
+    android:id="@+id/main_img_log"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/logo"
+    android:layout_marginBottom="50dp"
+    />
+<TextView
+    android:id="@+id/new_game"
+    android:text="@string/new_game"
+    android:textColor="@color/colorWhite"
+    android:gravity="center"
+    android:layout_width="147dp"
+    android:layout_height="50dp"
+    android:textSize="20sp"
+    android:layout_gravity="center"
+    />
+    <TextView
+        android:id="@+id/music_switch"
+        android:text="@string/music_switch"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="147dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/exit"
+        android:text="@string/exit"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="147dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>

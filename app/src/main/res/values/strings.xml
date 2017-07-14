@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SpireOfValidus</string>
+    <string name="new_game">新游戏</string>
+    <string name="music_switch">音乐:ON</string>
+    <string name="exit">退出</string>
+    <string name="top">上</string>
+    <string name="monster">怪物</string>
+    <string name="left">左</string>
+    <string name="right">右</string>
+    <string name="down">下</string>
+    <string name="exchangeTier">换层</string>
+    <string name="user_img">用户头像</string>
+    <string name="user_HP">生命值</string>
+    <string name="user_DEF">防御</string>
+    <string name="user_ATK">攻击力</string>
+</resources>

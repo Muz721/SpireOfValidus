@@ -22,6 +22,7 @@ import com.example.administrator.spireofvalidus.manager.ArticleManager;
 import com.example.administrator.spireofvalidus.manager.ImgArrManager;
 import com.example.administrator.spireofvalidus.manager.ShopManager;
 import com.example.administrator.spireofvalidus.manager.TaskManager;
+import com.example.administrator.spireofvalidus.util.BitmapUtils;
 import com.example.administrator.spireofvalidus.util.DataSynEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -64,7 +65,7 @@ boolean task=false;
             if (btnOne==null&&btnTwo==null&&btnThree==null){
                 btnOne=new Button(this.getContext());
                 btnOne.setText(ShopManager.shopTitle[1]);
-                btnOne.layout(75, 120, 405, 170);
+                btnOne.layout((BitmapUtils.WIDTH/10)*3, (changedView.getHeight()/10)*3, (BitmapUtils.WIDTH/10)*7,  (changedView.getHeight()/10)*4);
                 btnOne.setPadding(0, 10, 0, 0);
                 btnOne.setGravity(Gravity.CENTER);
                 btnOne.setOnTouchListener(stl);
@@ -157,7 +158,7 @@ boolean task=false;
             if(TaskManager.content[0][TaskManager.task[0]]!=null){
                 String [] str=TaskManager.content[0][TaskManager.task[0]].split("--");
                 for (int i = 0; i <str.length ; i++) {
-                    npc.drawImg(canvas,80,10,0,npcIndex/3*32,64,64);
+                    npc.drawImg(canvas,80,10,0,npcIndex/3*(player.getPlayerMap().getWidth()/3),64,64);
                     canvas.drawText(str[i],90,i==0?100:i*25+100,paint);
                 }
             }
@@ -165,7 +166,7 @@ boolean task=false;
             if (ShopManager.shopTitle!=null){
                 String [] str=ShopManager.shopTitle[0].split("--");
                 for (int i = 0; i <str.length ; i++) {
-                    npc.drawImg(canvas,80,10,0,npcIndex/3*32,64,64);
+                    npc.drawImg(canvas,80,10,0,npcIndex/3*(player.getPlayerMap().getWidth()/3),64,64);
                     canvas.drawText(str[i],160,i==0?60:i*25+60,paint);
                 }
             }

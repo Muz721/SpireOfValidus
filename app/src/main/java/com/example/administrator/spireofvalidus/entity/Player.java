@@ -34,7 +34,7 @@ public class Player extends View implements Runnable{
     private int fx;             //人物面对方向
     private int currdz;          //动作
     private Bitmap playerMap=null; //人物图像
-    private int mtStorey=6;            //人物在第几层
+    private int mtStorey=1;            //人物在第几层
     private int mtStoreyMax=1;         //人物最大到层数
     public static boolean loutiFlag=false;//false 向上走	true 下来 (坐标)
     //特殊物品 	K=物品名称 ，V 用于检测判断

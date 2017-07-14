@@ -437,8 +437,11 @@ Log.e("--key---",""+keyFlag);
                 try {
                     Thread.sleep(80);
                     int speedx = 0, speedy = 0;
-                    speedx = x > 0 ? 11 : -11;
-                    speedy = y > 0 ?11 : -11;
+                    Log.e("---ss--","----"+(player.getPlayerMap().getWidth()/3)/4);
+                    Log.e("----x--","-----"+player.getPlayerMap().getWidth());
+                    Log.e("----y--","-----"+player.getPlayerMap().getHeight());
+                    speedx = x > 0 ? (player.getPlayerMap().getWidth()/3)/4: -(player.getPlayerMap().getWidth()/3)/4;
+                    speedy = y > 0 ?(player.getPlayerMap().getWidth()/3)/4 : -(player.getPlayerMap().getWidth()/3)/4;
                     if (x != 0) {
                         x -= speedx;
                         player.setMyX(player.getMyX() + speedx);

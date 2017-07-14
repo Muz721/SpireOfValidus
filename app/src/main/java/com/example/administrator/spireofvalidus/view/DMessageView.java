@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.spireofvalidus.manager.MyBitMapManager;
+import com.example.administrator.spireofvalidus.util.BitmapUtils;
 import com.example.administrator.spireofvalidus.util.DataSynEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -65,7 +66,7 @@ public class DMessageView extends View {
         paint.setColor(Color.LTGRAY);
         if("".equals(this.content)){
             paint.setTextSize(32);
-            canvas.drawText(title, 60, 110, paint);
+            canvas.drawText(title, BitmapUtils.WIDTH/10, 110, paint);
         }else{
             paint.setTextSize(32);
             canvas.drawText(title, 70, 80, paint);

@@ -49,8 +49,8 @@ public class GameView extends View implements Runnable {
 		guaiWuImage=new DrawGuaiWuImage(context);
 		drawDoor=new DrawDoorImage(context);
 		new Thread(this).start();
-		Log.e("--x---",bitmapBg.getWidth()+"");
-		Log.e("--y---",bitmapBg.getHeight()+"");
+		Log.e("--背景x---",bitmapBg.getWidth()+"");
+		Log.e("--背景y---",bitmapBg.getHeight()+"");
 		}
 	@Override
 	protected void onDraw(Canvas canvas) {

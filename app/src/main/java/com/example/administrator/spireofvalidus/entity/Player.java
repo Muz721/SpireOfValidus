@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.spireofvalidus.manager.MyBitMapManager;
@@ -34,7 +33,7 @@ public class Player extends View implements Runnable{
     private int fx;             //人物面对方向
     private int currdz;          //动作
     private Bitmap playerMap=null; //人物图像
-    private int mtStorey=1;            //人物在第几层
+    private int mtStorey=3;            //人物在第几层
     private int mtStoreyMax=1;         //人物最大到层数
     public static boolean loutiFlag=false;//false 向上走	true 下来 (坐标)
     //特殊物品 	K=物品名称 ，V 用于检测判断
@@ -52,8 +51,8 @@ private static Player player=null;
         return player;
     }
     public void drawPlayer(Canvas canvas){
-        Log.e("-x-x---",playerMap.getWidth()+"");
-        Log.e("-x-y---",playerMap.getHeight()+"");
+//        Log.e("-x-x---",playerMap.getWidth()+"");
+//        Log.e("-x-y---",playerMap.getHeight()+"");
         Rect src=new Rect();
         src.left=currdz*(playerMap.getHeight()/4);
         src.top=fx*(playerMap.getHeight()/4);

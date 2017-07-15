@@ -3,18 +3,18 @@ package com.example.administrator.spireofvalidus.view;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.spireofvalidus.entity.Monster;
 import com.example.administrator.spireofvalidus.entity.Player;
 import com.example.administrator.spireofvalidus.manager.MyBitMapManager;
+import com.example.administrator.spireofvalidus.util.BitmapUtils;
 import com.example.administrator.spireofvalidus.util.DataSynEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -115,24 +115,31 @@ public class CombatView  extends View {
     }
 
     private void drawplayerAndMonsterInfo(Canvas canvas) {
-        //绘制头像
-        player.drawPlayer(canvas,350,80,64,64);
+
+//        //绘制头像
+//        player.drawPlayer(canvas,350,80,64,64);
         monster.drawMonster(canvas,60,75,64,64);
-        paint.setColor(Color.WHITE);
-        paint.setTextSize(16);
-        paint.setTypeface(Typeface.DEFAULT_BOLD);
-        //绘制血量
-        canvas.drawText(player.getHp()+"",265,90,paint);
-        canvas.drawText(monster.getHp()+"",170,90,paint);
-        //绘制攻击力
-        canvas.drawText(player.getAtk()+"",265,115,paint);
-        canvas.drawText(monster.getAtk()+"",170,115,paint);
-        //绘制防御值
-        canvas.drawText(player.getDef()+"",265,140,paint);
-        canvas.drawText(monster.getDef()+"",170,140,paint);
-        //绘制名字
-        canvas.drawText(player.getName(),350,200,paint);
-        canvas.drawText(monster.getName(),50,200,paint);
+//        paint.setColor(Color.WHITE);
+//        paint.setTextSize(16);
+//        paint.setTypeface(Typeface.DEFAULT_BOLD);
+//        //绘制血量
+//        canvas.drawText(player.getHp()+"",265,90,paint);
+//        canvas.drawText(monster.getHp()+"",170,90,paint);
+//        //绘制攻击力
+//        canvas.drawText(player.getAtk()+"",265,115,paint);
+//        canvas.drawText(monster.getAtk()+"",170,115,paint);
+//        //绘制防御值
+//        canvas.drawText(player.getDef()+"",265,140,paint);
+//        canvas.drawText(monster.getDef()+"",170,140,paint);
+//        //绘制名字
+//        canvas.drawText(player.getName(),350,200,paint);
+//        canvas.drawText(monster.getName(),50,200,paint);
+        Log.e("-----left-","-----"+(BitmapUtils.HEIGHT/100)*70);
+        Log.e("-----top-","-----"+(BitmapUtils.HEIGHT/100)*9);
+        Log.e("-----w-","-----"+(player.getPlayerMap().getWidth()/3)*2);
+        Log.e("-----h-","-----"+(player.getPlayerMap().getWidth()/3)*2);
+
+        player.drawPlayer(canvas,(BitmapUtils.WIDTH/100)*70,(BitmapUtils.HEIGHT/100)*9,(player.getPlayerMap().getWidth()/3)*2,(player.getPlayerMap().getWidth()/3)*2);
     }
 
     @Override

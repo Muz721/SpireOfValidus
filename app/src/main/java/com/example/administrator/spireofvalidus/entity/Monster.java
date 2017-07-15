@@ -37,10 +37,10 @@ public void initMonster(String name,int hp,int atk,int def,int money,int exp,int
 public void drawMonster(Canvas canvas,int left,int top,int w,int h){
     int fx=monsterImageIndex;
     Rect src=new Rect();
-    src.left=action*32;
-    src.top=fx*32;
-    src.right=action*32+32;
-    src.bottom=fx*32+32;
+    src.left=action*(monsterMap.getWidth()/4);
+    src.top=fx*(monsterMap.getWidth()/4);
+    src.right=action*(monsterMap.getWidth()/4)+(monsterMap.getWidth()/4);
+    src.bottom=fx*(monsterMap.getWidth()/4)+(monsterMap.getWidth()/4);
     Rect dst=new Rect();
     dst.left=left;
     dst.top=top;

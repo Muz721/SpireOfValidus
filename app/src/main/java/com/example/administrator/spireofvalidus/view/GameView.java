@@ -55,6 +55,8 @@ public class GameView extends View implements Runnable {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		if(bgPaint){
+			Log.e("--背景---","----"+bitmapBg.getHeight());
+			Log.e("---背景--","----"+bitmapBg.getWidth());
 //绘制背景
 			drawImageByArr(this.canvas, bitmapBg, ImgArrManager.bgImgArr,bitmapBg.getWidth()/24,bitmapBg.getHeight()/16,24);
 			//绘制一个  半透明(全屏) 的黑色图 覆盖背景

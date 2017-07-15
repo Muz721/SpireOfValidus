@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.administrator.spireofvalidus.R;
 import com.example.administrator.spireofvalidus.entity.Npc;
@@ -37,6 +38,7 @@ public class ShopAndNpcSayView extends ViewGroup{
     Button btnTwo=null;
     Button btnThree=null;
     Button btnFour=null;
+    TextView textView;
     public int npcIndex,npcrow,npccol;
     public int shopIndex=1;
     Npc npc=null;
@@ -65,22 +67,22 @@ boolean task=false;
             if (btnOne==null&&btnTwo==null&&btnThree==null){
                 btnOne=new Button(this.getContext());
                 btnOne.setText(ShopManager.shopTitle[1]);
-                btnOne.layout((BitmapUtils.WIDTH/10)*3, (changedView.getHeight()/10)*3, (BitmapUtils.WIDTH/10)*7,  (changedView.getHeight()/10)*4);
-                btnOne.setPadding(0, 10, 0, 0);
+                btnOne.layout((BitmapUtils.WIDTH/100)*10, (BitmapUtils.HEIGHT/100)*15, (BitmapUtils.WIDTH/100)*90, (BitmapUtils.HEIGHT/100)*20);
+                btnOne.setPadding(0, 5, 0, 5);
                 btnOne.setGravity(Gravity.CENTER);
                 btnOne.setOnTouchListener(stl);
                 this.addView(btnOne);
                 btnTwo=new Button(this.getContext());
                 btnTwo.setText(ShopManager.shopTitle[2]);
-                btnTwo.layout(75, 180, 405, 230);
-                btnTwo.setPadding(0, 10, 0, 0);
+                btnTwo.layout((BitmapUtils.WIDTH/100)*10, (BitmapUtils.HEIGHT/100)*21, (BitmapUtils.WIDTH/100)*90, (BitmapUtils.HEIGHT/100)*26);
+                btnTwo.setPadding(0, 5, 0, 5);
                 btnTwo.setGravity(Gravity.CENTER);
                 btnTwo.setOnTouchListener(stl);
                 this.addView(btnTwo);
                 btnThree=new Button(this.getContext());
                 btnThree.setText(ShopManager.shopTitle[3]);
-                btnThree.layout(75, 240, 405, 290);
-                btnThree.setPadding(0, 10, 0, 0);
+                btnThree.layout((BitmapUtils.WIDTH/100)*10, (BitmapUtils.HEIGHT/100)*27, (BitmapUtils.WIDTH/100)*90, (BitmapUtils.HEIGHT/100)*32);
+                btnThree.setPadding(0, 5, 0, 5);
                 btnThree.setGravity(Gravity.CENTER);
                 btnThree.setOnTouchListener(stl);
                 this.addView(btnThree);
@@ -88,7 +90,7 @@ boolean task=false;
                     btnFour=new Button(this.getContext());
                     btnFour.setText(ShopManager.shopTitle[4]);
                     btnFour.layout(75, 300, 405, 350);
-                    btnFour.setPadding(0, 10, 0, 0);
+                    btnFour.setPadding(0, 5, 0, 5);
                     btnFour.setGravity(Gravity.CENTER);
                     btnFour.setOnTouchListener(stl);
                     this.addView(btnFour);
@@ -116,8 +118,13 @@ boolean task=false;
             if(btnFour==null){
                 btnFour=new Button(this.getContext());
                 btnFour.setText("继续");
-                btnFour.layout(75, 300, 405, 350);
-                btnFour.setPadding(0, 10, 0, 0);
+//                btnFour.layout(75, 225, 405, 270);
+                Log.e("--100)*25---",(BitmapUtils.HEIGHT/100)*25+"");
+                Log.e("-(BitmapUtils.HEIGHT--",(float)(BitmapUtils.HEIGHT/1000)*385+"");
+//                textView.
+                btnFour.layout((BitmapUtils.WIDTH/100)*10, (BitmapUtils.HEIGHT/100)*33, (BitmapUtils.WIDTH/100)*90, (BitmapUtils.HEIGHT/100)*38);
+//                btnFour.layout((BitmapUtils.WIDTH/100)*10, (int) (( (float)BitmapUtils.HEIGHT/1000)*310), (BitmapUtils.WIDTH/100)*100, (int) (( (float)BitmapUtils.HEIGHT/1000)*360));
+                btnFour.setPadding(0, 5, 0, 5);
                 btnFour.setGravity(Gravity.CENTER);
                 btnFour.setOnTouchListener(stl);
                 this.addView(btnFour);
@@ -150,6 +157,8 @@ boolean task=false;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Canvas canvas1=new Canvas();
+        canvas1=canvas;
         Paint paint=new Paint();
         paint.setTextSize(20);
         paint.setTypeface(Typeface.DEFAULT_BOLD);
@@ -157,18 +166,42 @@ boolean task=false;
         if (npcIndex/3==0){
             if(TaskManager.content[0][TaskManager.task[0]]!=null){
                 String [] str=TaskManager.content[0][TaskManager.task[0]].split("--");
-                for (int i = 0; i <str.length ; i++) {
                     npc.drawImg(canvas,80,10,0,npcIndex/3*(player.getPlayerMap().getWidth()/3),64,64);
-                    canvas.drawText(str[i],90,i==0?100:i*25+100,paint);
+//                    TextPaint textPaint=new TextPaint();
+//                    textPaint.setTextSize(15);
+//                    canvas.drawText(str[0],160,0==0?60:0*25+60,paint);
+//                    StaticLayout layout=new StaticLayout(str[0],textPaint,240, Layout.Alignment.ALIGN_NORMAL,1.0F,1.0F,false);
+//
+//                    canvas1.translate(80,80);
+//                    layout.draw(canvas1);
+                for (int i = 0; i <str.length ; i++) {
+                    canvas.drawText(str[i],160,i==0?60:i*25+60,paint);
                 }
             }
         }else {
             if (ShopManager.shopTitle!=null){
                 String [] str=ShopManager.shopTitle[0].split("--");
-                for (int i = 0; i <str.length ; i++) {
                     npc.drawImg(canvas,80,10,0,npcIndex/3*(player.getPlayerMap().getWidth()/3),64,64);
+                for (int i = 0; i <str.length ; i++) {
+//                    canvas.drawText(str[i],160,i==0?60:i*25+60,paint);
+//                    TextPaint textPaint=new TextPaint();
+//                    textPaint.setTextSize(35);
                     canvas.drawText(str[i],160,i==0?60:i*25+60,paint);
+//                    StaticLayout layout=new StaticLayout(str[i],textPaint,240, Layout.Alignment.ALIGN_NORMAL,1.0F,0.0F,true);
+//                    canvas.translate(20,80);
+//                    layout.draw(canvas);
+//                    npc.drawImg(canvas,80,10,0,npcIndex/3*(player.getPlayerMap().getWidth()/3),64,64);
+//                    canvas.drawText(str[i],90,i==0?200:i*25+200,paint);
                 }
+//                    TextPaint textPaint=new TextPaint();
+//                    textPaint.setTextSize(15);
+//                    canvas.drawText(str[0],160,0==0?60:0*25+60,paint);
+//                    StaticLayout layout=new StaticLayout(str[0],textPaint,50, Layout.Alignment.ALIGN_OPPOSITE,1.0F,0.0F,false);
+//                layout.
+//                canvas1.
+//                    canvas1.translate(80,80);
+//                    layout.draw(canvas1);
+//                canvas1.restore();
             }
         }
     }

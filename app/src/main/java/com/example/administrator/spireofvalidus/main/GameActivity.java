@@ -102,7 +102,10 @@ public class GameActivity extends BaseActivity {
     DMessageView dMessage;
     @BindView(R.id.shopAndNpc)
     ShopAndNpcSayView shopAndNpc;
-
+int xx;
+    int playX;
+    int playY;
+    boolean direction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         player = Player.getPlayer(this);
@@ -422,8 +425,10 @@ Log.e("--key---",""+keyFlag);
     }
 
     public Thread getRunMove() {
-        Log.e("------aaa------","---"+player.getMyX());
+//        Log.e("------aaa------","---"+player.getMyX());
         if (runMove == null) {
+            playX=player.getMyX();
+            playY=player.getMyY();
             runMove = new Thread(new RunMove());
         }
         return runMove;
@@ -433,30 +438,76 @@ Log.e("--key---",""+keyFlag);
         @Override
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
-        Log.e("------aaaa-----","---"+player.getMyX());
+//        Log.e("------aaaa-----","---"+player.getMyX());
                 try {
                     Thread.sleep(80);
                     int speedx = 0, speedy = 0;
-                    Log.e("---ss--","----"+(player.getPlayerMap().getWidth()/3)/4);
-                    Log.e("----x--","-----"+player.getPlayerMap().getWidth());
-                    Log.e("----y--","-----"+player.getPlayerMap().getHeight());
-                    speedx = x > 0 ? (player.getPlayerMap().getWidth()/3)/4: -(player.getPlayerMap().getWidth()/3)/4;
-                    speedy = y > 0 ?(player.getPlayerMap().getWidth()/3)/4 : -(player.getPlayerMap().getWidth()/3)/4;
-                    if (x != 0) {
+                    xx++;
+//                    Log.e("----","----"+xx);
+//                    Log.e("---ss--","----"+(player.getPlayerMap().getWidth()/3)/4);
+//                    Log.e("----x--","-----"+player.getPlayerMap().getWidth());
+//                    Log.e("----y--","-----"+player.getPlayerMap().getHeight());
+                    speedx = x > 0 ? (player.getPlayerMap().getWidth()/3)/4: -((player.getPlayerMap().getWidth()/3)/4);
+                    speedy = y > 0 ?(player.getPlayerMap().getWidth()/3)/4 : -((player.getPlayerMap().getWidth()/3)/4);
+                    Log.e("--x---","--x--"+x);
+                    Log.e("--speedy---","--y--s"+speedx);
+                    if ((x<0&&x <= speedx)||(x>0&&x>=speedx)) {
                         x -= speedx;
                         player.setMyX(player.getMyX() + speedx);
-                        Log.e("-----","-speedx=="+speedx);
+//                        Log.e("-----","-speedx=="+speedx);
+//                    Log.e("--x---","--x--"+x);
+//                    Log.e("--y---","--y--s"+y);
+//                    Log.e("--speedy---","--y--s"+speedy);
+//                    Log.e("------------","---"+player.getMyX());
+                        direction=false;
                     }
-                    if (y != 0) {
+                    if ((y<0&&y <= speedy)||(y>0&&y>=speedy)) {
                         y -= speedy;
                         player.setMyY(player.getMyY() + speedy);
+                        direction=true;
                     }
-                    if (y == 0 && x == 0) {
-                        Log.e("--x---","--y--");
+//                    if (x > speedx) {
+//                        x += speedx;
+//                        player.setMyX(player.getMyX() + speedx);
+//                        Log.e("-----","-speedx=="+speedx);
+//                    }
+//                    if (y > speedy) {
+//                        y += speedy;
+//                        player.setMyY(player.getMyY() + speedy);
+//                    }
+                    if (direction&&y<=0&&y>speedy&& x==0) {
+                        y=0;
+                        player.setMyY(playY-(player.getPlayerMap().getWidth()/3));
+//                        Log.e("--xyyyyy---","--x--"+x);
+//                        Log.e("--y-yyyyy--","--y--s"+y);
+//                        Log.e("--speedy-yyy--","--y--s"+speedy);
+//                        Log.e("-------yyyy-----","---"+player.getMyX());
                         runMove.interrupt();
                         runMove = null;
                     }
+                    else if (!direction&&x<=0&&x>speedx&& y==0){
+                        Log.e("--x---","--x--"+x);
+                        Log.e("--y---","--y--s"+y);
+                        Log.e("--speedy---","--y--s"+speedx);
                         Log.e("------------","---"+player.getMyX());
+                        x=0;
+                        player.setMyX(playX-(player.getPlayerMap().getWidth()/3));
+                        runMove.interrupt();
+                        runMove = null;
+                    }
+                    else if (direction&&y>=0&&y<speedy&& x==0){
+//                        Log.e("--y---","--x--"+y);
+                        y=0;
+                        player.setMyY(playY+(player.getPlayerMap().getWidth()/3));
+                        runMove.interrupt();
+                        runMove = null;
+                    }else if (!direction&&x>=0&&x<speedx&& y==0){
+                        player.setMyX(playX+(player.getPlayerMap().getWidth()/3));
+                        x=0;
+                        runMove.interrupt();
+                        runMove = null;
+                    }
+
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }

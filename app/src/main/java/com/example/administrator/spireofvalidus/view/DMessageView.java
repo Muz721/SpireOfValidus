@@ -66,19 +66,20 @@ public class DMessageView extends View {
         paint.setColor(Color.LTGRAY);
         if("".equals(this.content)){
             paint.setTextSize(32);
-            canvas.drawText(title, BitmapUtils.WIDTH/10, 110, paint);
+            Log.e("--------","--------"+(BitmapUtils.HEIGHT/100));
+            canvas.drawText(title,(BitmapUtils.WIDTH/100)*12, (BitmapUtils.HEIGHT/100)*12, paint);
         }else{
             paint.setTextSize(32);
-            canvas.drawText(title, 70, 80, paint);
+            canvas.drawText(title, (BitmapUtils.WIDTH/100)*14, (BitmapUtils.HEIGHT/100)*9, paint);
             paint.setTextSize(24);
-            canvas.drawText(content, 100, 130, paint);
+            canvas.drawText(content, (BitmapUtils.WIDTH/100)*20, (BitmapUtils.HEIGHT/100)*14, paint);
         }
     }
 
     @Override
     protected void onVisibilityChanged(@NonNull View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
-        Log.e("-------dm-------","-------"+visibility);
+//        Log.e("-------dm-------","-------"+visibility);
         if (visibility==View.VISIBLE){
             if (this.handler==null){
                 return;

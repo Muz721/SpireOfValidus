@@ -3,7 +3,6 @@ package com.example.administrator.spireofvalidus.entity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.util.Log;
 
 import com.example.administrator.spireofvalidus.manager.ImgArrManager;
 import com.example.administrator.spireofvalidus.manager.MyBitMapManager;
@@ -29,8 +28,8 @@ private static Npc npc=null;
         return npc;
     }
     public void drawNpc(Canvas canvas){
-        Log.e("--npc-x-x--","-----"+bitmap.getWidth());
-        Log.e("-x-npc--y--","-----"+bitmap.getHeight());
+//        Log.e("--npc-x-x--","-----"+bitmap.getWidth());
+//        Log.e("-x-npc--y--","-----"+bitmap.getHeight());
         if (npcImgArr!=null){
             for (int i = 0; i <npcImgArr.length ; i++) {
                 for (int j = 0; j <npcImgArr[i].length ; j++) {
